@@ -1240,6 +1240,10 @@ public class DesignerView {
 
                             if (selectedIndices.length == 1) {
                                 populate = tableEnabled(getSelectedTableName());
+                                if(!populate) {
+                                    setInfo(String.format("The '%s' table is disable, skip set enable.", getSelectedTableName()));
+                                    populate = true;
+                                }
                             }
 
                             if (populate) {
